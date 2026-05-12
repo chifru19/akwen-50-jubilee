@@ -4,9 +4,9 @@ from datetime import date
 # Page Setup
 st.set_page_config(page_title="Akwen's 50th Jubilee", page_icon="🌴")
 
-# --- CONFIGURATION (Defined first to avoid errors) ---
-# Replace with the actual WhatsApp number
-whatsapp_number = "4917641505374"  # I used a placeholder, please update if needed
+# --- CONFIGURATION (Updated Number) ---
+# Clean number for the link: 4915217200085
+whatsapp_number = "4915217200085"
 whatsapp_link = f"https://wa.me/{whatsapp_number}?text=Hi,%20I%20have%20an%20enquiry%20regarding%20Akwen's%20Jubilee"
 
 # Theme Styling
