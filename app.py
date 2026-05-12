@@ -11,10 +11,26 @@ st.markdown("""
     h1 { color: #B8860B; text-align: center; font-family: 'serif'; margin-bottom: 5px; }
     h2 { color: #B8860B; font-family: 'serif'; }
     .stMetric { background-color: #ffffff; padding: 15px; border-radius: 10px; border: 1px solid #B8860B; }
+    .whatsapp-button {
+        display: inline-block;
+        background-color: #25D366;
+        color: white !important;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+    }
     .footer { text-align: center; padding: 20px; color: #888; font-size: 14px; border-top: 1px solid #eee; margin-top: 50px; }
     .footer a { color: #B8860B; text-decoration: none; font-weight: bold; }
     </style>
     """, unsafe_allow_html=True)
+
+# --- CONFIGURATION ---
+# Replace with your actual WhatsApp number (include country code, no + or spaces)
+whatsapp_number = "YOUR_PHONE_NUMBER" 
+whatsapp_link = f"https://wa.me/{whatsapp_number}?text=Hi,%20I%20have%20an%20enquiry%20regarding%20Akwen's%20Jubilee"
 
 # --- HEADER SECTION ---
 st.title("✨ Akwen’s Golden Jubilee ✨")
@@ -25,10 +41,17 @@ try:
 except:
     st.info("📌 Header image 'hero.jpg' not found in folder.")
 
-# 2. COUNTDOWN
-event_date = date(2026, 9, 2)
-days_left = (event_date - date.today()).days
-st.metric(label="Countdown to Zanzibar ✈️", value=f"{days_left} Days")
+# 2. COUNTDOWN & QUICK CONTACT
+col_count, col_wa = st.columns([2, 1])
+
+with col_count:
+    event_date = date(2026, 9, 2)
+    days_left = (event_date - date.today()).days
+    st.metric(label="Countdown to Zanzibar ✈️", value=f"{days_left} Days")
+
+with col_wa:
+    st.markdown(f'<a href="{whatsapp_link}" class="whatsapp-button" target="_blank">💬 WhatsApp Support</a>', unsafe_allow_html=True)
+    st.caption("For enquiries & confirmations")
 
 st.divider()
 
@@ -39,10 +62,9 @@ col1, col2 = st.columns(2)
 
 with col1:
     try:
-        # UPDATED: Points to the new program image featuring Akwen
         st.image("itinerary_new.jpg", caption="📅 The Official Updated Program", use_container_width=True)
     except:
-        st.warning("itinerary_new.jpg missing. Please upload the new image to VS Code.")
+        st.warning("itinerary_new.jpg missing.")
 
     try:
         st.image("packing.jpg", caption="🧳 What to Pack", use_container_width=True)
@@ -55,11 +77,11 @@ with col2:
     except:
         st.warning("jubilee.jpg missing")
     
-    st.success("""
+    st.success(f"""
     **Location:** Kendwa Rocks Hotel  
     **Theme:** Tropical Paradise  
     **Vibe:** Elegant, Exotic, & Unforgettable  
-    **Last Updated:** May 12, 2026
+    **RSVP:** [Confirm via WhatsApp]({whatsapp_link})
     """)
 
 st.divider()
