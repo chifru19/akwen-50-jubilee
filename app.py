@@ -9,6 +9,7 @@ st.markdown("""
     <style>
     .main { background-color: #FFFAF0; }
     h1 { color: #B8860B; text-align: center; font-family: 'serif'; margin-bottom: 5px; }
+    h2 { color: #B8860B; font-family: 'serif'; }
     .stMetric { background-color: #ffffff; padding: 15px; border-radius: 10px; border: 1px solid #B8860B; }
     .footer { text-align: center; padding: 20px; color: #888; font-size: 14px; border-top: 1px solid #eee; margin-top: 50px; }
     .footer a { color: #B8860B; text-decoration: none; font-weight: bold; }
@@ -31,16 +32,17 @@ st.metric(label="Countdown to Zanzibar ✈️", value=f"{days_left} Days")
 
 st.divider()
 
-# --- DETAILS SECTION (The other 3 images) ---
+# --- DETAILS SECTION ---
 st.header("Event Details & Guides")
 
 col1, col2 = st.columns(2)
 
 with col1:
     try:
-        st.image("itinerary.jpg", caption="📅 The Official Program", use_container_width=True)
+        # UPDATED: Points to the new program image featuring Akwen
+        st.image("itinerary_new.jpg", caption="📅 The Official Updated Program", use_container_width=True)
     except:
-        st.warning("itinerary.jpg missing")
+        st.warning("itinerary_new.jpg missing. Please upload the new image to VS Code.")
 
     try:
         st.image("packing.jpg", caption="🧳 What to Pack", use_container_width=True)
@@ -56,7 +58,8 @@ with col2:
     st.success("""
     **Location:** Kendwa Rocks Hotel  
     **Theme:** Tropical Paradise  
-    **Vibe:** Elegant, Exotic, & Unforgettable
+    **Vibe:** Elegant, Exotic, & Unforgettable  
+    **Last Updated:** May 12, 2026
     """)
 
 st.divider()
@@ -83,7 +86,7 @@ with tab3:
     st.write("### Share your Jubilee moments")
     st.file_uploader("Upload Photos", type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
 
-# --- FOOTER SECTION (Your Branding) ---
+# --- FOOTER SECTION ---
 st.markdown(f"""
     <div class="footer">
         <p>Built with ❤️ by <b>Frank Fru</b></p>
