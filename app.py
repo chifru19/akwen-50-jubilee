@@ -4,6 +4,11 @@ from datetime import date
 # Page Setup
 st.set_page_config(page_title="Akwen's 50th Jubilee", page_icon="🌴")
 
+# --- CONFIGURATION (Defined first to avoid errors) ---
+# Replace with the actual WhatsApp number
+whatsapp_number = "4917641505374"  # I used a placeholder, please update if needed
+whatsapp_link = f"https://wa.me/{whatsapp_number}?text=Hi,%20I%20have%20an%20enquiry%20regarding%20Akwen's%20Jubilee"
+
 # Theme Styling
 st.markdown("""
     <style>
@@ -27,11 +32,6 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# --- CONFIGURATION ---
-# Replace with your actual WhatsApp number (include country code, no + or spaces)
-whatsapp_number = "YOUR_PHONE_NUMBER" 
-whatsapp_link = f"https://wa.me/{whatsapp_number}?text=Hi,%20I%20have%20an%20enquiry%20regarding%20Akwen's%20Jubilee"
-
 # --- HEADER SECTION ---
 st.title("✨ Akwen’s Golden Jubilee ✨")
 
@@ -39,7 +39,7 @@ st.title("✨ Akwen’s Golden Jubilee ✨")
 try:
     st.image("hero.jpg", use_container_width=True)
 except:
-    st.info("📌 Header image 'hero.jpg' not found in folder.")
+    st.info("📌 Header image 'hero.jpg' not found.")
 
 # 2. COUNTDOWN & QUICK CONTACT
 col_count, col_wa = st.columns([2, 1])
