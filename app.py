@@ -2,12 +2,11 @@ import streamlit as st
 from datetime import date
 
 # Page Setup
-st.set_page_config(page_title="Akwen's 50th Jubilee", page_icon="🌴")
+st.set_page_config(page_title="Akwen's 50th Anniversary", page_icon="🌴")
 
-# --- CONFIGURATION (Updated Number) ---
-# Clean number for the link: 4915217200085
+# --- CONFIGURATION ---
 whatsapp_number = "4915217200085"
-whatsapp_link = f"https://wa.me/{whatsapp_number}?text=Hi,%20I%20have%20an%20enquiry%20regarding%20Akwen's%20Jubilee"
+whatsapp_link = f"https://wa.me/{whatsapp_number}?text=Hi,%20I%20have%20an%20enquiry%20regarding%20Akwen's%20Anniversary"
 
 # Theme Styling
 st.markdown("""
@@ -33,7 +32,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # --- HEADER SECTION ---
-st.title("✨ Akwen’s Golden Jubilee ✨")
+st.title("✨ Akwen’s Golden Anniversary ✨")
 
 # 1. THE HERO IMAGE (Header)
 try:
@@ -73,7 +72,7 @@ with col1:
 
 with col2:
     try:
-        st.image("jubilee.jpg", caption="💠 The Golden Jubilee Bash", use_container_width=True)
+        st.image("jubilee.jpg", caption="💠 The Golden Anniversary Bash", use_container_width=True)
     except:
         st.warning("jubilee.jpg missing")
     
@@ -105,7 +104,7 @@ with tab2:
         st.checkbox(item, key=f"check_{item}")
 
 with tab3:
-    st.write("### Share your Jubilee moments")
+    st.write("### Share some past and present moments with Akwen")
     st.file_uploader("Upload Photos", type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
 
 # --- FOOTER SECTION ---
@@ -115,7 +114,7 @@ st.markdown(f"""
         <p>
             <a href="https://frankfru.com" target="_blank">frankfru.com</a> | 
             <a href="https://github.com/chifru19" target="_blank">GitHub</a> | 
-            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/frankfru" target="_blank">LinkedIn</a>
         </p>
     </div>
     """, unsafe_allow_html=True)
