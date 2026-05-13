@@ -34,10 +34,10 @@ st.markdown("""
 # --- HEADER SECTION ---
 st.title("✨ Akwen’s Golden Anniversary ✨")
 
-# --- SLIDESHOW SECTION (Moved to top) ---
-st.markdown("<h3 style='text-align: center; color: #B8860B;'>Akens Past & Present: An Anniversary Slide Show</h3>", unsafe_allow_html=True)
+# --- SLIDESHOW SECTION ---
+# Fixed spelling: Changed "Akens" to "Akwen's"
+st.markdown("<h3 style='text-align: center; color: #B8860B;'>Akwen's Past & Present: An Anniversary Slide Show</h3>", unsafe_allow_html=True)
 try:
-    # This will play the renamed video file
     st.video("slideshow.mp4")
 except:
     st.info("📌 'slideshow.mp4' not found. Please ensure the video is renamed and uploaded.")
