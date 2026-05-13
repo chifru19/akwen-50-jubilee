@@ -34,7 +34,15 @@ st.markdown("""
 # --- HEADER SECTION ---
 st.title("✨ Akwen’s Golden Anniversary ✨")
 
-# 1. THE HERO IMAGE (Header)
+# --- SLIDESHOW SECTION (Moved to top) ---
+st.markdown("<h3 style='text-align: center; color: #B8860B;'>Akens Past & Present: An Anniversary Slide Show</h3>", unsafe_allow_html=True)
+try:
+    # This will play the renamed video file
+    st.video("slideshow.mp4")
+except:
+    st.info("📌 'slideshow.mp4' not found. Please ensure the video is renamed and uploaded.")
+
+# 1. THE HERO IMAGE
 try:
     st.image("hero.jpg", use_container_width=True)
 except:
@@ -105,7 +113,7 @@ with tab2:
 
 with tab3:
     st.write("### Share some past and present moments with Akwen")
-    st.file_uploader("Upload Photos", type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
+    st.file_uploader("Upload Photos or Videos", type=['png', 'jpg', 'jpeg', 'mp4', 'mov'], accept_multiple_files=True)
 
 # --- FOOTER SECTION ---
 st.markdown(f"""
